@@ -1,0 +1,144 @@
+
+html {
+    /* al establecer box-sizing a border box para el elmento html, se hace que todos los elementos del documento
+    calculen ancho y alto incluyendo el padding y el borde. Esto facilita el manejo de dimensiones y evita
+    problemas de desbordamiento en el diseño */
+    box-sizing: border-box;
+    /* Esta tecnica se usa para facilitar el uso de unidades rem. Dado que el tamaño de fuente predeterminado del
+    navegador suele ser 16px, al establecer el tamaño al 62.5%*(116px * 0.625 = 10px), 1 rem equivale a 10px, lo que hace
+    mas sencillo calcular tamaños, por ejemplo, 1.6rem se traduce a 16px*/
+    font-size: 62.5%;
+}
+
+body {
+    /* Define un color de fondo para el body, lo que establece la apariencia de la pagina */
+    background-color: #fec356;
+    /* Con esta propiedad, se establece el tamaño base de fuente para el cuerpo del documento, al usar rem, se
+    relaciona con el font-size del elemento html garantizando coherencia y escalabilidad en toda la pagina */
+    font-size: 1.6rem;
+}
+
+img {
+    /* Se asegura de que las imagenes no excedan el ancho de su contenedor, Esto es esencial para el diseño responsivo
+    ya queevita que las iimagenes desborden el layout */
+    max-width: 100%;
+}
+
+p {
+    /* Define la altura de linea para el texto en parrafos, mejorando la legibilidad */
+    line-height: 2.5rem;
+    /* Se ajusta el tamaño de fuente especifico para los parrafos, haciendo que el texto tenga un tamalo uniforme
+    y legible acorde al diseño global */
+    font-size: 1.7rem;
+}
+
+.contenedor {
+    /* Define un ancho fijo para el contenedor principal, lo que ayuda a tener un diseño centrado consistente en
+    pantallas mas grandes */
+    width: 1200px;
+    /* el margen superior e inferior de 80px proporciona separacion, mientras que auto, en los laterales centra
+    el contenedor horizontalmente */
+    margin: 80px auto;
+    /* Asigna un fondo blanco que contrasta con el fondo del body, haciendo resaltar el contenido */
+    background-color: white;
+}
+
+.contenido {
+    /* Utilizar flexbox permite distribuir de forma flexible los elementos hijos dentro del contenedor de contenido */
+    display: flex;
+    /* Se aplica un relleno horizontal de 3 rem para proporcionar espacio a la izquierda y derecha */
+    padding: 0 3rem;
+    /* Distribuye los elementos hijos dejando espacios iguales a ambos lados de cada uno. Esto balancea
+    la apariencia de la seccion */
+    justify-content: space-around;
+}
+
+.navegacion {
+    border-style: solid;
+    /* Estas propiedades crean un borde solido de 1px alrededor del contenedor de navegacion, destacandolo 
+    visualmente */
+    width: 200px;
+
+    /* Establece un ancho fijo para la navegacion, garantizando un tamaño consistente idependientemente
+    del contenido interno */
+    border-width: 1px;
+}
+
+.navegacion h3 {
+    /* Añade una line debajo del encabezado para marcar visualemente la separacion entre el titulo
+    y el contenido de la lista */
+    border-bottom: 1px solid;
+    /* Proporciona espacio interior para que el encabezado tenga margen con respecto a sus bordes */
+    padding: 1rem 1.5rem;
+    /* Elimina los margenes externo, asegurando que el espacio se controle unicamente por el padding */
+    margin: 0
+}
+
+.navegacion ol li {
+    /* Establece un margen alrededor de cada item de la lista, creando separacion entre los elementos para mejorar
+    la legibilidad y la organizacion */
+    margin: 1rem;
+}
+
+.title {
+    /* Elimina margenes por defecto para evitar espacios innecesarios en el encabezado principal */
+    margin: 0;
+    /* Proporciona espacio interno al titulo, asegurando que el contenido no se vea comprimido y tenga un respiro
+    visual */
+    padding: 1rem 3rem;
+}
+
+.informacion {
+    /* Aplica un pequeño relleno a la seccion de informacion, creando un poco de espacio dentro del elemento
+    para que el contenido no toque los bordes */
+    padding: .5rem;
+}
+
+.card {
+    /* Genera un borde sutil que delimita la tarjeta */
+    border: .1rem solid;
+    /* Añade un espacio interior ligero, separando el contenido del borde */
+    padding: .2rem;
+    /* Establece un color de fondo para diferenciar visualmente la tarjeta del fondo del contenedor principal */
+    background-color: #f4f3f4;
+    /* Proporciona espacio debajo de la tarjeta para que , en caso de haber otras tarjetas o elementos
+    , se separen adecuadamente */
+    margin-bottom: 1rem;
+}
+
+.card-cabecera {
+    /* Facilita la distribucion horizontal de los elemnetos hijos dentro de la cabecera de la tarjeta */
+    display: flex;
+    /* Añade un pequeño margen superior para separar la cabecera del area que la precede */
+    margin-top: .2rem;
+}
+
+.card-cabecera p{
+    /* Establece que este parrafo ocupe el 40% del espacio disponible dentro del contenedor flexible de la cabecera
+    . Esto permite dividir el espacio junto con otros elementos (como la imagen) */
+    flex: 40%;
+    /* Centra vertialmente el contenido dentro del espacio asignado, aunque puede no tener efecto en todos
+    los casos dependiento del contexto de flexbox */
+    align-content: center;
+    /* Agrega un margen a la izquierda para separar este elemento de otros elementos (por ejemplo, la imagen),
+    evitando que se vean amontonados */
+    margin-left: .5rem;
+}
+
+.subtitle {
+    /* Define un color de fondo resaltante para el subtitulo, diferenciandolo del resto del contenido */
+    background-color: #ffc500;
+    /* Elimina margenes predeterminados para mantener una apariencia limpia y controlada */
+    margin: 0;
+    /* Proporciona espacio interno, haciendo que el texto se vea equilibrado y centrado */
+    padding: .6rem;
+    /* Centra el texto horizonalmente, lo cual es habitual en titulos o secciones destacadas, mejorando la estetica */
+    text-align: center;
+}
+
+.card-imagen {
+    /* Especifica que el contenedor de la imagen en la tarjeta ocupara el 60% del espacio
+    en la linea del flex container, Esta regla, junto con el flex, del texto 40%, asegura que la cabecera se distribuya
+    en una proporcion precisa ayudando al diseño y la presentacion equilibrada de la tarjeta */
+    flex-basis: 60%;
+}
